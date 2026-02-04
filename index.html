@@ -3,78 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maheswari N | AI & Data Science Portfolio</title>
+    <title>MAHESWARI N | AI & Data Science Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #050505;
-            color: #e0e0e0;
-            font-family: 'Fira Code', monospace;
+        :root { --neon-cyan: #00f3ff; --neon-pink: #ff00ff; }
+        body { background-color: #020202; color: #b3f1ff; font-family: 'Fira Code', monospace; overflow-x: hidden; }
+        .glitch { position: relative; font-family: 'Orbitron', sans-serif; animation: glitch 1s linear infinite; }
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px,0) skew(0deg); }
+            4%, 60% { transform: translate(-2px,0) skew(0deg); }
+            62% { transform: translate(0,0) skew(5deg); }
         }
-        .neon-text-blue { text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff; color: #00f3ff; }
-        .neon-text-pink { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; color: #ff00ff; }
-        .neon-border { border: 1px solid #00f3ff; box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); }
-        .cyber-card:hover { transform: translateY(-5px); border-color: #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); transition: all 0.3s ease; }
-        h1, h2 { font-family: 'Orbitron', sans-serif; }
+        .cyber-grid {
+            background-image: linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .neon-border-cyan { border: 1px solid var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
+        .neon-border-pink { border: 1px solid var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 255, 0.2); }
+        .stat-bar { height: 4px; background: #1a1a1a; position: relative; width: 100%; }
+        .stat-progress { height: 100%; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
     </style>
 </head>
-<body class="p-4 md:p-10">
+<body class="cyber-grid">
 
-    <header class="max-w-5xl mx-auto text-center py-20 border-b border-gray-800">
-        <h1 class="text-5xl md:text-7xl font-black neon-text-blue mb-4">MAHESWARI N</h1>
-        <p class="text-xl md:text-2xl text-pink-500 uppercase tracking-widest mb-6">AI & Data Science Student // Java Full Stack // Bilingual AI Trainer</p>
-        <div class="flex justify-center gap-6">
-            <a href="mailto:maheswarinagendrancs@gmail.com" class="hover:neon-text-pink">[Email]</a>
-            <a href="#" class="hover:neon-text-pink">[LinkedIn]</a>
-            <a href="#" class="hover:neon-text-pink">[GitHub]</a>
+    <div class="w-full bg-cyan-950 text-[10px] md:text-xs py-1 border-b border-cyan-500 overflow-hidden whitespace-nowrap">
+        <div class="inline-block animate-pulse px-4 tracking-tighter">
+            SYSTEM_STATUS: ACTIVE // LOCATION: SALEM, TN // CGPA: 8.61 // JAVA FULL STACK // JLPT N5 CERTIFIED // BILINGUAL_AI_TRAINER_ONLINE // 
         </div>
-    </header>
+    </div>
 
-    <section class="max-w-5xl mx-auto my-16">
-        <h2 class="text-2xl neon-text-pink mb-8">> system.get_skills()</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="neon-border p-6 rounded-lg bg-black">
-                <h3 class="text-cyan-400 mb-4 font-bold">// Languages</h3>
-                <p>C, Core Java, Python [cite: 4]</p>
-                <p class="mt-2 text-gray-500">Japanese (JLPT N5) </p>
-            </div>
-            <div class="neon-border p-6 rounded-lg bg-black">
-                <h3 class="text-cyan-400 mb-4 font-bold">// Backend & DB</h3>
-                <p>J2EE (JSP, Servlet), SQL </p>
-                <p class="mt-2">Node.js, Express, SQLite</p>
-            </div>
-            <div class="neon-border p-6 rounded-lg bg-black">
-                <h3 class="text-cyan-400 mb-4 font-bold">// AI & Tools</h3>
-                <p>Flask, Streamlit, ML 101</p>
-                <p class="mt-2 text-pink-500">Prompt Engineering </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto my-16">
-        <h2 class="text-2xl neon-text-pink mb-8">> active_deployments.exe</h2>
-        <div class="space-y-8">
-            <div class="cyber-card neon-border p-8 rounded-lg bg-gray-900 bg-opacity-40">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-bold text-white">Learn With Fun</h3>
-                    <span class="text-pink-500 text-sm">HACKATHON RUNNER-UP </span>
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        
+        <header class="mb-20">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                <div>
+                    <h1 class="glitch text-5xl md:text-7xl font-black mb-2 uppercase text-white" data-text="MAHESWARI N">
+                        MAHESWARI N
+                    </h1>
+                    <p class="text-pink-500 font-bold tracking-widest uppercase mb-4">> B.Tech AI & DATA SCIENCE</p>
                 </div>
-                <p class="text-gray-400 mb-4">A full-stack gamified educational platform for underprivileged students. Features 10+ interactive games across Math, English, and Science. </p>
-                <p class="text-cyan-400 text-sm">Tech: Node.js, Express, SQLite, JavaScript </p>
+                <a href="Resume_Maheswari_N.pdf" download class="px-6 py-3 border-2 border-pink-500 text-pink-500 font-bold hover:bg-pink-500 hover:text-black transition-all">
+                    DOWNLOAD_CV.EXE
+                </a>
             </div>
+            <div class="border-l-4 border-cyan-500 pl-6 max-w-2xl">
+                <p class="text-gray-400 italic">
+                    "Highly motivated AI & Data Science student passionate about developing scalable solutions and contributing to digital transformation through backend engineering and multilingual data architecture."
+                </p>
+            </div>
+        </header>
 
-            <div class="cyber-card neon-border p-8 rounded-lg bg-gray-900 bg-opacity-40">
-                <h3 class="text-2xl font-bold text-white mb-2">Ayurvedic MediBot</h3>
-                <p class="text-gray-400 mb-4">AI-powered chatbot leveraging a JSON dataset of 50+ remedies to provide personalized medicine and yoga suggestions. </p>
-                <p class="text-cyan-400 text-sm">Tech: Python, Flask, JSON, Streamlit </p>
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold mb-8 text-white uppercase flex items-center">
+                <span class="text-pink-500 mr-4">01.</span> MISSION_ACHIEVEMENT
+            </h2>
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-pink-500 rounded opacity-20 group-hover:opacity-50 transition"></div>
+                <div class="relative bg-black border border-gray-800 p-8 rounded">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-tighter">Runner-up @ Gen Brainiacs Hackathon</h3>
+                        <span class="bg-cyan-500 text-black text-[10px] px-2 py-1 font-bold">GDG_WIN</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Project: <strong>"Learn With Fun"</strong> – A full-stack gamified educational platform with 10+ modules (Math, English, Science) designed for underprivileged students. 
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] border border-cyan-800 px-2 text-cyan-500">Node.js</span>
+                        <span class="text-[10px] border border-cyan-800 px-2 text-cyan-500">Express.js</span>
+                        <span class="text-[10px] border border-cyan-800 px-2 text-cyan-500">SQLite</span>
+                        <span class="text-[10px] border border-cyan-800 px-2 text-cyan-500">Nodemailer</span>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold mb-8 text-white uppercase"><span class="text-pink-500 mr-4">02.</span> EXPERIENCE_LOGS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neon-border-cyan p-6 bg-gray-900 bg-opacity-20">
+                    <h3 class="text-cyan-400 font-bold uppercase mb-1">Data Intern @ i18n Solutions</h3>
+                    <p class="text-[10px] text-gray-500 mb-4 uppercase">Feb 2024 - Apr 2024</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>- Created 150+ multilingual, Unicode-compatible datasets in JSON. </li>
+                        <li>- Spanning 300+ languages to support a Python package for PyPI.</li>
+                        <li>- Specialized in data cleaning and preprocessing for worldwide language retrieval.</li>
+                    </ul>
+                </div>
+                <div class="neon-border-pink p-6 bg-gray-900 bg-opacity-20">
+                    <h3 class="text-pink-500 font-bold uppercase mb-1">Java Full Stack Intern @ Dev Tech</h3>
+                    <p class="text-[10px] text-gray-500 mb-4 uppercase">July 2024 - Aug 2024</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>- Built a Student Details Management system using Core Java and J2EE (JSP, Servlet).</li>
+                        <li>- Implemented CRUD and record-viewing functionalities with Oracle DB. </li>
+                        <li>- Deployed modules on WebLogic Server.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold mb-8 text-white uppercase"><span class="text-pink-500 mr-4">03.</span> SUB_ROUTINES // PROJECTS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="border border-gray-800 p-6 hover:bg-cyan-950 hover:bg-opacity-10 transition cursor-default">
+                    <h3 class="text-white font-bold mb-2 uppercase">HopeHaven</h3>
+                    <p class="text-xs text-gray-400 mb-4">Smart food donation platform with a routing algorithm matching donors to nearby orphanages. Features a 3-login system and AI-chatbot support.</p>
+                    <p class="text-[10px] text-cyan-500 font-bold uppercase">Python | Streamlit | Chatbot</p>
+                </div>
+                <div class="border border-gray-800 p-6 hover:bg-pink-950 hover:bg-opacity-10 transition cursor-default">
+                    <h3 class="text-white font-bold mb-2 uppercase">AyurMediBot</h3>
+                    <p class="text-xs text-gray-400 mb-4">AI-powered Ayurvedic assistant providing medicine, precaution, and yoga suggestions based on a JSON dataset of 50+ remedies. </p>
+                    <p class="text-[10px] text-pink-500 font-bold uppercase">Flask | JSON | Python</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold mb-8 text-white uppercase"><span class="text-pink-500 mr-4">04.</span> LINGUISTIC_MATRIX</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-black border border-gray-800 p-6">
+                    <h4 class="text-cyan-400 text-xs font-bold mb-4 uppercase">// Bilingual_Trainer</h4>
+                    <p class="text-white font-bold italic mb-1">Tamil (Native)</p>
+                    <p class="text-white font-bold italic mb-4">English (Fluent)</p>
+                    <p class="text-[10px] text-gray-500 uppercase italic">> Curated 50+ prompts for AI quality evaluation @ DataAnnotation.</p>
+                </div>
+                <div class="bg-black border border-gray-800 p-6">
+                    <h4 class="text-pink-500 text-xs font-bold mb-4 uppercase">// Certification</h4>
+                    <p class="text-white font-bold italic mb-2">Japanese (JLPT N5)</p>
+                    <p class="text-[10px] text-gray-500 uppercase italic">> Certified Language Proficiency </p>
+                </div>
+                <div class="bg-black border border-gray-800 p-6">
+                    <h4 class="text-cyan-400 text-xs font-bold mb-4 uppercase">// Core_Programming</h4>
+                    <div class="space-y-3 text-[10px]">
+                        <div><div class="flex justify-between mb-1"><span>Python</span></div><div class="stat-bar"><div class="stat-progress w-[95%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1"><span>Core Java</span></div><div class="stat-bar"><div class="stat-progress w-[90%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1"><span>C</span></div><div class="stat-bar"><div class="stat-progress w-[80%]"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-10 border-t border-gray-900">
+        <div class="flex justify-center gap-8 mb-4">
+            <a href="https://github.com" class="text-xs hover:text-white transition uppercase">Github</a>
+            <a href="https://linkedin.com" class="text-xs hover:text-white transition uppercase">Linkedin</a>
+            <a href="mailto:maheswarinagendrancs@gmail.com" class="text-xs hover:text-white transition uppercase">Email</a>
         </div>
-    </section>
-
-    <footer class="max-w-5xl mx-auto text-center py-10 text-gray-600 border-t border-gray-800">
-        <p>Built by Maheswari N | 2026 Edition</p>
-        <p class="text-xs mt-2 uppercase">Salem, Tamil Nadu </p>
+        <p class="text-[10px] text-gray-700 uppercase tracking-tighter">Maheswari N // © 2026</p>
     </footer>
 
 </body>
