@@ -8,7 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
     <style>
         :root { --neon-cyan: #00f3ff; --neon-pink: #ff00ff; }
-        body { background-color: #020202; color: #b3f1ff; font-family: 'Fira Code', monospace; overflow-x: hidden; }
+        body { background-color: #020202; color: #b3f1ff; font-family: 'Fira Code', monospace; overflow-x: hidden; transition: all 0.3s ease; }
+        
+        /* Light Mode Overrides */
+        body.light-mode { background-color: #f4f7f6; color: #1a202c; background-image: none; }
+        body.light-mode .text-white { color: #1a202c !important; }
+        body.light-mode .bg-black, body.light-mode .bg-gray-900 { background-color: #ffffff; }
+        body.light-mode .border-gray-800 { border-color: #cbd5e0; }
+
         .glitch { position: relative; font-family: 'Orbitron', sans-serif; animation: glitch 1s linear infinite; }
         @keyframes glitch {
             2%, 64% { transform: translate(2px,0) skew(0deg); }
@@ -31,6 +38,18 @@
     <div class="w-full bg-cyan-950 text-[10px] md:text-xs py-1 border-b border-cyan-500 overflow-hidden whitespace-nowrap">
         <div class="inline-block animate-pulse px-4 tracking-tighter">
             SYSTEM_STATUS: ACTIVE // LOCATION: SALEM, TN // CGPA: 8.61 // JAVA FULL STACK // JLPT N5 CERTIFIED // BILINGUAL_AI_TRAINER_ONLINE //
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <button id="theme-toggle" class="px-4 py-2 border border-cyan-500 text-cyan-500 text-xs font-bold uppercase hover:bg-cyan-500 hover:text-black transition">
+            Switch_Visual_Mode
+        </button>
+
+        <div class="relative w-full md:w-72">
+            <input type="text" id="tech-search" placeholder="Search Tech (e.g. Python, Java)..." 
+                   class="w-full bg-black border border-pink-500 p-2 text-xs text-pink-500 focus:outline-none focus:ring-1 focus:ring-pink-500">
+            <div class="absolute right-3 top-2 text-pink-500 opacity-50">🔍</div>
         </div>
     </div>
 
@@ -86,7 +105,7 @@
                     <h3 class="text-cyan-400 font-bold uppercase mb-1">Data Intern @ i18n Solutions</h3>
                     <p class="text-[10px] text-gray-500 mb-4 uppercase">Feb 2024 - Apr 2024</p>
                     <ul class="text-sm text-gray-400 space-y-2">
-                        <li>- Created 150+ multilingual, Unicode-compatible datasets in JSON. li>
+                        <li>- Created 150+ multilingual, Unicode-compatible datasets in JSON.</li>
                         <li>- Spanning 300+ languages to support a Python package for PyPI.</li>
                         <li>- Specialized in data cleaning and preprocessing for worldwide language retrieval.</li>
                     </ul>
@@ -102,11 +121,10 @@
                 </div>
                  <div class="neon-border-pink p-6 bg-gray-900 bg-opacity-20">
                     <h3 class="text-pink-500 font-bold uppercase mb-1">Bilingual AI Trainer @DataAnnotation</h3>
-                    <p class="text-[10px] text-gray-500 mb-4 uppercase">REmote//Freelance</p>
+                    <p class="text-[10px] text-gray-500 mb-4 uppercase">Remote // Freelance</p>
                     <ul class="text-sm text-gray-400 space-y-2">
-                        <li>- Curated 75+ Prompts in languages Tamil and English for Training AI chatbot </li>
-                        <li>- Created Prompts across various topics.
-                        <li>- Evaluated the model on performance metrics such as localization, correctness.</li>
+                        <li>- Curated 75+ Prompts in languages Tamil and English for Training AI chatbot. </li>
+                        <li>- Evaluated the model on performance metrics such as localization and correctness.</li>
                     </ul>
                 </div>
             </div>
@@ -114,15 +132,15 @@
 
         <section class="mb-20">
             <h2 class="text-2xl font-bold mb-8 text-white uppercase"><span class="text-pink-500 mr-4">03.</span> PROJECTS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="border border-gray-800 p-6 hover:bg-cyan-950 hover:bg-opacity-10 transition cursor-default">
+            <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="project-card border border-gray-800 p-6 hover:bg-cyan-950 hover:bg-opacity-10 transition cursor-default" data-tech="python streamlit chatbot json ai html">
                     <h3 class="text-white font-bold mb-2 uppercase">HopeHaven</h3>
-                    <p class="text-xs text-gray-400 mb-4">Smart food donation platform with a routing algorithm matching donors to nearby orphanages based on location, no. of residents and availability of food. Features a 3-login system and AI-chatbot support. </p>
+                    <p class="text-xs text-gray-400 mb-4">Smart food donation platform with a routing algorithm matching donors to nearby orphanages. Features a 3-login system and AI-chatbot support.</p>
                     <p class="text-[10px] text-cyan-500 font-bold uppercase">Python | Streamlit | Chatbot | JSON</p>
                 </div>
-                <div class="border border-gray-800 p-6 hover:bg-pink-950 hover:bg-opacity-10 transition cursor-default">
+                <div class="project-card border border-gray-800 p-6 hover:bg-pink-950 hover:bg-opacity-10 transition cursor-default" data-tech="flask json python streamlit ai healthcare">
                     <h3 class="text-white font-bold mb-2 uppercase">AyurMediBot</h3>
-                    <p class="text-xs text-gray-400 mb-4">AI-powered Ayurvedic assistant providing medicine, precaution, and yoga suggestions based on a JSON dataset of 50+ remedies. </p>
+                    <p class="text-xs text-gray-400 mb-4">AI-powered Ayurvedic assistant providing medicine, precaution, and yoga suggestions based on a JSON dataset of 50+ remedies.</p>
                     <p class="text-[10px] text-pink-500 font-bold uppercase">Flask | JSON | Python | Streamlit</p>
                 </div>
             </div>
@@ -135,12 +153,12 @@
                     <h4 class="text-cyan-400 text-xs font-bold mb-4 uppercase">// Bilingual_Trainer</h4>
                     <p class="text-white font-bold italic mb-1">Tamil (Native)</p>
                     <p class="text-white font-bold italic mb-4">English (Fluent)</p>
-                    <p class="text-[10px] text-gray-500 uppercase italic">> Curated 50+ prompts for AI quality evaluation @ DataAnnotation. </p>
+                    <p class="text-[10px] text-gray-500 uppercase italic">> AI Evaluation @ DataAnnotation</p>
                 </div>
                 <div class="bg-black border border-gray-800 p-6">
                     <h4 class="text-pink-500 text-xs font-bold mb-4 uppercase">// Certification</h4>
                     <p class="text-white font-bold italic mb-2">Japanese (JLPT N5)</p>
-                    <p class="text-[10px] text-gray-500 uppercase italic">> Certified Language Proficiency [cite: 22]</p>
+                    <p class="text-[10px] text-gray-500 uppercase italic">> Certified Language Proficiency</p>
                 </div>
                 <div class="bg-black border border-gray-800 p-6">
                     <h4 class="text-cyan-400 text-xs font-bold mb-4 uppercase">// Core_Programming</h4>
@@ -152,20 +170,6 @@
                 </div>
             </div>
         </section>
-       <div class="max-w-6xl mx-auto px-6 pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
-    <button id="theme-toggle" class="px-4 py-2 border border-cyan-500 text-cyan-500 text-xs font-bold uppercase hover:bg-cyan-500 hover:text-black transition">
-        Switch_Visual_Mode
-    </button>
-
-    <div class="relative w-full md:w-72">
-        <input type="text" id="tech-search" placeholder="Search Tech (e.g. Python, Java)..." 
-               class="w-full bg-black border border-pink-500 p-2 text-xs text-pink-500 focus:outline-none focus:ring-1 focus:ring-pink-500">
-        <div class="absolute right-3 top-2 text-pink-500 opacity-50">🔍</div>
-    </div>
-</div>
-
-
-
 
     </main>
 
@@ -177,41 +181,34 @@
         </div>
         <p class="text-[10px] text-gray-700 uppercase tracking-tighter">Maheswari N // © 2026</p>
     </footer>
+
     <script>
-    // 1. Search/Filter Logic
-    const searchInput = document.getElementById('tech-search');
-    const projects = document.querySelectorAll('.project-card');
+        // 1. Search/Filter Logic
+        const searchInput = document.getElementById('tech-search');
+        const projectCards = document.querySelectorAll('.project-card');
 
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
-        projects.forEach(card => {
-            const tech = card.getAttribute('data-tech').toLowerCase();
-            if (tech.includes(query)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            projectCards.forEach(card => {
+                const tech = card.getAttribute('data-tech').toLowerCase();
+                if (tech.includes(query)) {
+                    card.classList.remove('hidden');
+                    card.classList.add('block');
+                } else {
+                    card.classList.remove('block');
+                    card.classList.add('hidden');
+                }
+            });
         });
-    });
 
-    // 2. Theme Switch Logic
-    const themeBtn = document.getElementById('theme-toggle');
-    const body = document.body;
+        // 2. Theme Switch Logic
+        const themeBtn = document.getElementById('theme-toggle');
+        const body = document.body;
 
-    themeBtn.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        // Save simple CSS for light mode
-        if (body.classList.contains('light-mode')) {
-            body.style.backgroundColor = "#f0f0f0";
-            body.style.color = "#222";
-            document.querySelectorAll('.text-white').forEach(el => el.style.color = "#000");
-        } else {
-            body.style.backgroundColor = "#020202";
-            body.style.color = "#b3f1ff";
-            document.querySelectorAll('.text-white').forEach(el => el.style.color = "#fff");
-        }
-    });
-</script>
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+        });
+    </script>
 
 </body>
 </html>
