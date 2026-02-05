@@ -152,6 +152,20 @@
                 </div>
             </div>
         </section>
+       <div class="max-w-6xl mx-auto px-6 pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+    <button id="theme-toggle" class="px-4 py-2 border border-cyan-500 text-cyan-500 text-xs font-bold uppercase hover:bg-cyan-500 hover:text-black transition">
+        Switch_Visual_Mode
+    </button>
+
+    <div class="relative w-full md:w-72">
+        <input type="text" id="tech-search" placeholder="Search Tech (e.g. Python, Java)..." 
+               class="w-full bg-black border border-pink-500 p-2 text-xs text-pink-500 focus:outline-none focus:ring-1 focus:ring-pink-500">
+        <div class="absolute right-3 top-2 text-pink-500 opacity-50">🔍</div>
+    </div>
+</div>
+
+
+
 
     </main>
 
@@ -163,6 +177,41 @@
         </div>
         <p class="text-[10px] text-gray-700 uppercase tracking-tighter">Maheswari N // © 2026</p>
     </footer>
+    <script>
+    // 1. Search/Filter Logic
+    const searchInput = document.getElementById('tech-search');
+    const projects = document.querySelectorAll('.project-card');
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        projects.forEach(card => {
+            const tech = card.getAttribute('data-tech').toLowerCase();
+            if (tech.includes(query)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+
+    // 2. Theme Switch Logic
+    const themeBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        // Save simple CSS for light mode
+        if (body.classList.contains('light-mode')) {
+            body.style.backgroundColor = "#f0f0f0";
+            body.style.color = "#222";
+            document.querySelectorAll('.text-white').forEach(el => el.style.color = "#000");
+        } else {
+            body.style.backgroundColor = "#020202";
+            body.style.color = "#b3f1ff";
+            document.querySelectorAll('.text-white').forEach(el => el.style.color = "#fff");
+        }
+    });
+</script>
 
 </body>
 </html>
